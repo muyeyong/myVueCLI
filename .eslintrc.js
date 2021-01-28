@@ -16,8 +16,8 @@ module.exports = {
         moduleDirectory: ['node_modules', 'src/'],
       },
       alias: {
-        map: [['components', './src/components']],
-        extensions: ['.js', '.vue'],
+        map: [['components', './src/components'], ['@', './src'], ['plugins', './src/plugins']],
+        extensions: ['.js', '.vue', '.ts'],
       },
     },
   },

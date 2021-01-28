@@ -1,7 +1,7 @@
 const path = require("path")
 
 const vueSrc = "./src"
-function resolve(dir) {
+function resolve (dir) {
   return path.join(__dirname, "./", dir)
 }
 
@@ -32,6 +32,16 @@ module.exports = {
     const imagesRule = config.module.rule("images")
     imagesRule.exclude.add(resolve("src/icons"))
     config.module.rule("images").test(/\.(png|jpe?g|gif|svg)(\?.*)?$/)
+
+    config.resolve.alias
+      .set('@', resolve('src'))
+      .set('assets', resolve('src/assets'))
+      .set('components', resolve('src/components'))
+      .set('layout', resolve('src/layout'))
+      .set('base', resolve('src/base'))
+      .set('static', resolve('src/static'))
+      .set('plugins', resolve('src/plugins'))
+
   },
   configureWebpack: {
     devServer: {
@@ -51,6 +61,13 @@ module.exports = {
         "@": path.resolve(__dirname, vueSrc)
       },
       extensions: [".js", ".vue", ".json"]
-    }
+    },
+  },
+  css: {
+    loaderOptions: {
+      less: {
+        javascriptEnabled: true,
+      },
+    },
   }
 }
