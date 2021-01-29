@@ -6,10 +6,6 @@ import router from './router'
 import store from './store'
 
 let app: any = null
-// createApp(App)
-//     .use(store)
-//     .use(router)
-// loadUiComponent(app)
 
 function render({ appContent, loading }: { appContent?: any; loading?: any } = {}): void {
     if (!app) {
@@ -35,7 +31,7 @@ function render({ appContent, loading }: { appContent?: any; loading?: any } = {
     }
     app.use(router).use(store)
     loadUiComponent(app)
-    app.mount('#app')
+    app.mount('#contain')
 }
 
 render()
@@ -47,13 +43,13 @@ registerMicroApps(
         {
             name: 'vue-one',
             entry: '//localhost:8989',
-            render,
+            container: '#sub-app-view-one',
             activeRule: getActiveRule('/aaa'),
         },
         {
             name: 'vue-two',
             entry: '//localhost:9189',
-            render,
+            container: '#sub-app-view-tow',
             activeRule: getActiveRule('/bbb'),
         },
     ],
@@ -78,7 +74,6 @@ registerMicroApps(
         ],
     },
 )
-
 setDefaultMountApp('/aaa')
 runAfterFirstMounted(() => {})
 start()

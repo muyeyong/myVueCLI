@@ -4,12 +4,14 @@
             <router-link to="/">Home</router-link> |
             <router-link to="/about">About</router-link>
         </div>
+        <div class="sub-app-view" id="sub-app-view-one"></div>
+        <div class="sub-app-view" id="sub-app-view-tow"></div>
         <router-view />
     </section>
 </template>
 
 <style lang="less">
-#app {
+#contain {
     font-family: Avenir, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
