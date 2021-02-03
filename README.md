@@ -1,19 +1,11 @@
-# my-cli
+# Vue 脚手架
 
-## Project setup
-```
-yarn install
-```
+## 简介
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+基于 Vue Cli 生成，基本架构是 Vue3.0 + TS + Eslint([airbnb](https://github.com/lin-123/javascript))，保存代码会自动格式化
 
-### Compiles and minifies for production
-```
-yarn build
-```
+## 特色
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+支持微前端([qiankun](https://qiankun.umijs.org/zh/faq))
+
+提交代码自动检查代码是否规范
