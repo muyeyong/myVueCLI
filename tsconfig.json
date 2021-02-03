@@ -17,6 +17,16 @@
         },
         "lib": ["esnext", "dom", "dom.iterable", "scripthost"]
     },
-    "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue", "tests/**/*.ts", "tests/**/*.tsx", "src/plugins/antDesign.js"],
+    "include": [
+        "src/**/*.ts",
+        "src/**/*.tsx",
+        "src/**/*.vue",
+        "tests/**/*.ts",
+        "tests/**/*.tsx",
+        "src/plugins/antDesign.js",
+        "src/library/ui/install.ts",
+        "src/library/ui/index.ts",
+        "src/library/ui/one-button/index.ts"
+    ],
     "exclude": ["node_modules"]
 }

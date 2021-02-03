@@ -1,11 +1,17 @@
 import { createApp, h } from 'vue'
 import { registerMicroApps, runAfterFirstMounted, setDefaultMountApp, start } from 'qiankun'
-import loadUiComponent from './plugins/antDesign'
+import loadBaseUiComponent from './plugins/antd'
+import loadOneUiComponent from './library/ui/install'
+import OneUi from './library/ui'
 import App from './App.vue'
 import router from './router'
 import store from './store'
 
 let app: any = null
+const msg = {
+    data: [],
+    uiComponent: OneUi,
+}
 
 function render({ appContent, loading }: { appContent?: any; loading?: any } = {}): void {
     if (!app) {
@@ -30,7 +36,8 @@ function render({ appContent, loading }: { appContent?: any; loading?: any } = {
         app.loading = loading
     }
     app.use(router).use(store)
-    loadUiComponent(app)
+    loadBaseUiComponent(app)
+    loadOneUiComponent(app)
     app.mount('#contain')
 }
 
@@ -43,14 +50,16 @@ registerMicroApps(
         {
             name: 'vue-one',
             entry: '//localhost:8989',
-            container: '#sub-app-view-one',
+            container: '#sub-app-view',
             activeRule: getActiveRule('/aaa'),
+            props: msg,
         },
         {
             name: 'vue-two',
-            entry: '//localhost:9189',
-            container: '#sub-app-view-tow',
+            entry: '//localhost:8095',
+            container: '#sub-app-view',
             activeRule: getActiveRule('/bbb'),
+            props: msg,
         },
     ],
     {

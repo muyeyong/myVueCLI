@@ -4,8 +4,7 @@
             <router-link to="/">Home</router-link> |
             <router-link to="/about">About</router-link>
         </div>
-        <div class="sub-app-view" id="sub-app-view-one"></div>
-        <div class="sub-app-view" id="sub-app-view-tow"></div>
+        <div class="sub-app-view" id="sub-app-view"></div>
         <router-view />
     </section>
 </template>

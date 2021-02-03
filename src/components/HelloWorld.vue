@@ -1,5 +1,7 @@
 <template>
-    <div class="hello"></div>
+    <div class="hello">
+        <one-date-picker></one-date-picker>
+    </div>
 </template>
 
 <script lang="ts">
